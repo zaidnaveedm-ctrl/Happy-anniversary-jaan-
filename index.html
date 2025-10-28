@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaid ❤️ Verushka | Our One Month Together</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe4ec;
+      background-image: linear-gradient(to bottom right, #ffdee9, #ffc1cc);
+      overflow-x: hidden;
+      position: relative;
+      height: 100%;
+    }
+
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 24px;
+      animation: floatUp 6s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body class="text-center text-gray-800">
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0e43b7e5db.mp3?filename=romantic-piano-112199.mp3" type="audio/mp3">
+  </audio>
+
+  <header class="py-10 relative z-10">
+    <h1 class="text-6xl text-pink-600 drop-shadow-lg">Zaid ❤️ Verushka</h1>
+    <p class="text-lg text-pink-700 mt-3 italic">Happy One Month Anniversary</p>
+  </header>
+
+  <section class="max-w-3xl mx-auto px-4 py-10 fade-in relative z-10">
+    <h2 class="text-3xl text-pink-700 mb-4">Our Journey Begins 💞</h2>
+    <p class="text-lg leading-relaxed">
+      One month ago, our story began — softly, beautifully, like the first sunrise of forever.
+      In such a short time, you’ve filled my heart with laughter, peace, and a love that feels endless.
+      Every day with you, Verushka, is a new page written in warmth and wonder.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-10 fade-in relative z-10">
+    <h2 class="text-3xl text-pink-700 mb-4">What You Mean to Me 💗</h2>
+    <p class="text-lg leading-relaxed">
+      You are not just the love of my life — you are my calm after every storm, my sunshine in every gray.
+      Your smile lights up my world, your presence makes every ordinary moment extraordinary.
+      I thank the universe every day for giving me you.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-10 fade-in relative z-10">
+    <h2 class="text-3xl text-pink-700 mb-4">Forever Starts Here 💍</h2>
+    <p class="text-lg leading-relaxed">
+      One month is just the beginning of our forever, my love.
+      I promise to keep cherishing you, to laugh with you, to grow with you —
+      and to love you more deeply with every passing day.
+      Here’s to us, to now, and to every beautiful tomorrow.
+    </p>
+  </section>
+
+  <footer class="py-10 fade-in relative z-10">
+    <p class="text-pink-800 text-lg font-semibold">With all my heart,</p>
+    <p class="text-2xl text-pink-600 font-bold">– Zaid ❤️</p>
+    <p class="text-sm text-gray-600 mt-2 italic">28th October 2025</p>
+  </footer>
+
+  <script>
+    // Scroll animation
+    ScrollReveal().reveal('.fade-in', {
+      distance: '40px',
+      duration: 1000,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200
+    });
+
+    // Background music
+    const music = document.getElementById('bg-music');
+    document.body.addEventListener('click', () => {
+      if (music.paused) {
+        music.play().catch(() => {});
+      }
+    }, { once: true });
+
+    // Floating hearts with color variation
+    const colors = ['#ff6b81', '#ffffff', '#ffd700']; // pink, white, gold
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      heart.style.fontSize = (16 + Math.random() * 28) + 'px';
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 350);
+  </script>
+</body>
+</html>
