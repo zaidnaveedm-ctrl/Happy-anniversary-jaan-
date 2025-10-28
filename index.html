@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -14,13 +14,12 @@
     position: relative;
   }
 
-  h1, h2 {
-    font-family: 'Great Vibes', cursive;
+  h1, h2, p {
+    color: #000000; /* pure black text */
   }
 
-  /* make all text dark rose for strong contrast */
-  h1, h2, p {
-    color: #7a003d;
+  h1, h2 {
+    font-family: 'Great Vibes', cursive;
   }
 
   /* floating hearts behind text */
@@ -100,7 +99,7 @@
     }
   }, { once: true });
 
-  const colors = ['#ff6b81', '#ffffff', '#ffd700'];
+  const colors = ['#ff6b81', '#ffffff', '#ffd700']; // pink, white, gold
   function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
